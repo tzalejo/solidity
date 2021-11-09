@@ -32,15 +32,15 @@ contract Usuario is Banco{
     
     function retirarDinero(string memory _nombre , uint _dinero) public returns(bool) {
         
-        if(uint(clientes[_nombre].dinero) - uint(_dinero) >= 0){
-             clientes[_nombre].dinero -= _dinero;
-             return true;
+        if(clientes[_nombre].dinero >= _dinero){
+            clientes[_nombre].dinero -= _dinero;
+            return true;
         }
         return false;
     }
     
     function consultarDinero(string memory _nombre) public view returns(uint){
-        return clientes[_nombre];
+        return clientes[_nombre].dinero;
     }
     
 }
