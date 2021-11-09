@@ -1,10 +1,11 @@
 pragma solidity >=0.4.4 <0.7.0;
 
+// Definimos una libreria.
 library Operaciones {
     
     function division(uint _i, uint _j) public pure returns(uint){
         require(_j>0, "No podemos dividir por cero");
-        return _i/_j;
+        return _i / _j;
     }
 
     function multiplicacion(uint _i, uint _j) public pure returns(uint){
@@ -13,7 +14,7 @@ library Operaciones {
         if(_i==0 || _j==0){
             return 0;
         }
-        return _i*_j;
+        return _i * _j;
     }
 
 }
@@ -27,6 +28,5 @@ contract Calculos {
         uint m = _a.multiplicacion(_b);
         return ( q, m);
     }
-
 
 }
